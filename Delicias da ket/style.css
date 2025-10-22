@@ -3,9 +3,9 @@
 
 
 :root {
-    --bg-light-pink: #fce4ec;
-    --bg-medium-pink: #FCE4EC;
-    --bg-header-pink: #F8C8DC;
+    --bg-light-pink: #FFD7D7;
+    --bg-medium-pink: #ffe5e5;
+    --bg-header-pink: #f8c8d8;
     --border-pink: #E57373;
     --text-maroon: #880E4F;
     --text-dark-gray: #4E4E4E;
@@ -30,43 +30,137 @@ body {
     color: var(--text-dark-gray);
 }
 
-header {
+.header-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  box-sizing: border-box; 
+  position: relative;
+  background-color: #FFCACA;
+}
+.logo{
+  width:250px;
+  height:auto ;
+  display: block;
+  margin: 0;
+
+}
+
+.icon {
+  position:absolute;   
+  right: 20px;              
+  margin-top: -80px; 
+  margin-right: 30px;                
+  transform: translateY(-50%);
+  width: 40px;
+  height: auto;
+  cursor: pointer;
+
+}
+
+nav {
+  width: 100%;
+  height: 76px;
+  background-color: #FFD7D7;
+  position:relative;
+  
+}
+nav::after{
+  content:'';
+  position:absolute;
+  margin-top: 20px;
+  left:50%;
+  transform: translateX(-50%);
+  width: 93%;
+  height: 5px;
+  background-color: #880E4F;
+  border-radius: 4px;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+  padding: 8px 5px ;
+}
+nav ul li{
+  position: relative;
+}
+nav ul li::after{
+   content:'';
+   background-color:#880E4F;
+   position:absolute;
+   transform: translateY(-50%);
+   left: 150%;
+   top:60%;
+   height: 35px;
+   width: 4px;
+   border-radius: 4px;
+}
+nav ul li:last-child::after {
+  display: none;
+}
+nav ul li:nth-child(1)::after {
+  left: calc(100% + 90px);
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #880E4F;
+
+  font-weight: 300;
+  font-size: 30px;
+  font-style: italic;
+  font-family: 'Poly', serif;
+}
+/*.cabecalho {
     display: flex;
-    justify-content: space-between;
+    height: 80px;
+    background-color: #FFCACA;
+    padding: 10px;
     align-items: center;
-    padding: 10px 5%;
-    background-color: var(--bg-header-pink);
-    border-bottom: 2px solid var(--border-pink);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    justify-content: center;
+    justify-content: space-between;
 }
 
-header .logo img {
-    height: 50px;
-}
-
-header nav ul {
-    list-style: none;
+.cabecalho-carrinho {
     display: flex;
-    gap: 25px;
+    justify-content: end;
+    padding-right: 20px;
 }
 
-header nav a {
-    text-decoration: none;
-    color: var(--text-maroon);
-    font-weight: bold;
-    font-size: 1.1rem;
-    padding-bottom: 5px;
+.logo {
+    height: 100px;
 }
 
-header nav a.ativo {
-    border-bottom: 2px solid var(--text-maroon);
+.carrinho {
+    height: 25px;
 }
 
-header .icone-carrinho i {
-    font-size: 1.8rem;
-    color: var(--text-maroon);
+.navegacao {
+    background-color: #FFD7D7;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    height: 50px;
+    font-size: 18px;
+}
+
+.botao {
+    all: unset;
+    color: #850E34;
+    font-family: "Poly", serif;
+    font-weight: bolder;
+}
+
+.botao:hover {
     cursor: pointer;
+    color: #e84679;
+    transform: scale(1.2)
 }
+*/
 
 main {
     max-width: 1100px;
@@ -80,7 +174,7 @@ main {
     padding: 30px 20px 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    border: 3px solid var(--border-pink);
+    border: 3px solid var(--text-maroon);
     
 }
 
@@ -121,7 +215,7 @@ main h1::after {
     align-items: center;
     gap: 15px;
     background-color: var(--white);
-    border: 3px solid var(--border-pink);
+    border: 3px solid var(--text-maroon);
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 25px;
@@ -155,7 +249,7 @@ main h1::after {
 
 .secao-formulario input {
     padding: 18px 15px;
-    border: 3px solid var(--border-pink);
+    border: 3px solid var(--text-maroon);
     border-radius: 8px;
     font-size: 1rem;
     background-color: var(--white);
@@ -187,7 +281,7 @@ main h1::after {
     gap: 10px;
     padding: 18px 15px;
     background-color: var(--white);
-    border: 3px solid var(--border-pink);
+    border: 3px solid var(--text-maroon);
     border-radius: 8px;
     font-size: 1rem;
     font-weight: bold;
@@ -214,10 +308,10 @@ main h1::after {
 .icone-pix { color: var(--icon-blue); }
 .icone-cartao { color: var(--icon-blue); }
 
-/* Coluna da Direita */
+
 .secao-resumo {
     background-color: var(--bg-medium-pink);
-    border: 3px solid var(--border-pink);
+    border: 3px solid var(--text-maroon);
     border-radius: 8px;
     padding: 25px;
     height: fit-content;
@@ -235,7 +329,7 @@ main h1::after {
     height: 60px;
     border-radius: 8px;
     object-fit: cover;
-    border: 1px solid var(--border-pink);
+    border: 1px solid var(--text-maroon);
 }
 
 .item-carrinho .info-item {
@@ -253,7 +347,7 @@ main h1::after {
 
 .item-carrinho .quantidade-item {
     background-color: var(--white);
-    border: 1px solid var(--border-pink);
+    border: 1px solid var(--text-maroon);
     padding: 2px 8px;
     border-radius: 4px;
     font-weight: bold;
@@ -265,7 +359,7 @@ main h1::after {
     gap: 12px;
     margin-top: 20px;
     padding-bottom: 20px;
-    border-bottom: 1px solid var(--border-pink);
+    border-bottom: 1px solid var(--text-maroon);
 }
 
 .linha-resumo {
