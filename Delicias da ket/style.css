@@ -1,7 +1,9 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&display=swap');
 
+
 :root {
-    --bg-light-pink: #FEF7F7;
+    --bg-light-pink: #fce4ec;
     --bg-medium-pink: #FCE4EC;
     --bg-header-pink: #F8C8DC;
     --border-pink: #E57373;
@@ -14,6 +16,7 @@
     --icon-blue: #00BCD4;
 }
 
+
 * {
     margin: 0;
     padding: 0;
@@ -22,18 +25,9 @@
 
 body {
     font-family: 'Lato', sans-serif;
-    background-color: var(--bg-light-pink);
-    color: var(--text-dark-gray);
-    background-image: url(img/Elyra\ \(3\).png);
+    background-image: url('img/Elyra\ \(3\).png');
     background-repeat: repeat;
-    
-    
-    /* A marca d'água do fundo é uma imagem. 
-       Para replicar, você precisaria do PNG do logo.
-       background-image: url('caminho/para/logo-watermark.png');
-       background-repeat: repeat;
-       opacity: 0.5; 
-    */
+    color: var(--text-dark-gray);
 }
 
 header {
@@ -43,10 +37,11 @@ header {
     padding: 10px 5%;
     background-color: var(--bg-header-pink);
     border-bottom: 2px solid var(--border-pink);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 header .logo img {
-    height: 50px; /* Ajuste a altura do logo conforme necessário */
+    height: 50px;
 }
 
 header nav ul {
@@ -63,11 +58,11 @@ header nav a {
     padding-bottom: 5px;
 }
 
-header nav a.active {
+header nav a.ativo {
     border-bottom: 2px solid var(--text-maroon);
 }
 
-header .cart-icon i {
+header .icone-carrinho i {
     font-size: 1.8rem;
     color: var(--text-maroon);
     cursor: pointer;
@@ -75,8 +70,18 @@ header .cart-icon i {
 
 main {
     max-width: 1100px;
-    margin: 30px auto;
+    margin: 0 auto;
     padding: 0 20px;
+}
+
+.container-titulo {
+    background-color: var(--bg-light-pink);
+    margin: 30px auto 0;
+    padding: 30px 20px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border: 3px solid var(--border-pink);
+    
 }
 
 main h1 {
@@ -84,106 +89,105 @@ main h1 {
     color: var(--text-maroon);
     font-size: 3rem;
     text-align: center;
-    margin-bottom: 10px;
 }
 
-/* Linha abaixo do H1 */
 main h1::after {
     content: '';
     display: block;
     width: 80px;
     height: 4px;
     background-color: var(--text-maroon);
-    margin: 10px auto 30px;
+    margin: 10px auto 0; 
     border-radius: 2px;
 }
 
-.checkout-container {
+.container-pedido {
     display: grid;
-    grid-template-columns: 1.2fr 1fr; /* Coluna da esquerda um pouco maior */
+    grid-template-columns: 1.2fr 1fr;
     gap: 30px;
+    margin-top: 30px;
 }
 
-.form-section h2,
-.summary-section h2 {
+.secao-formulario h2,
+.secao-resumo h2 {
     color: var(--text-maroon);
     font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     margin-bottom: 15px;
 }
 
-.address-box {
+.caixa-endereco {
     display: flex;
     align-items: center;
     gap: 15px;
     background-color: var(--white);
-    border: 1px solid var(--border-pink);
+    border: 3px solid var(--border-pink);
     padding: 15px;
     border-radius: 8px;
     margin-bottom: 25px;
 }
 
-.address-box i {
+.caixa-endereco i {
     font-size: 1.5rem;
     color: var(--text-maroon);
 }
 
-.address-box div {
+.caixa-endereco div {
     display: flex;
     flex-direction: column;
 }
 
-.address-box strong {
+.caixa-endereco strong {
     color: var(--text-maroon);
     font-size: 1.1rem;
 }
 
-.address-box span {
+.caixa-endereco span {
     color: var(--text-dark-gray);
     font-size: 0.9rem;
 }
 
-.form-section form {
+.secao-formulario form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-.form-section input {
+.secao-formulario input {
     padding: 18px 15px;
-    border: 1px solid var(--border-pink);
+    border: 3px solid var(--border-pink);
     border-radius: 8px;
     font-size: 1rem;
     background-color: var(--white);
 }
 
-.form-section input::placeholder {
+.secao-formulario input::placeholder {
     color: #AAA;
 }
 
-.form-section h2 {
+.secao-formulario h2 {
     margin-top: 25px;
 }
 
-.payment-subtitle {
+.subtitulo-pagamento {
     font-size: 0.9rem;
     margin-bottom: 15px;
     color: var(--text-dark-gray);
 }
 
-.payment-options {
+.opcoes-pagamento {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
 }
 
-.payment-option {
+.opcao-pagamento {
     display: flex;
     align-items: center;
     gap: 10px;
     padding: 18px 15px;
     background-color: var(--white);
-    border: 1px solid var(--border-pink);
+    border: 3px solid var(--border-pink);
     border-radius: 8px;
     font-size: 1rem;
     font-weight: bold;
@@ -192,41 +196,41 @@ main h1::after {
     transition: all 0.2s ease;
 }
 
-.payment-option:hover {
+.opcao-pagamento:hover {
     background-color: var(--bg-medium-pink);
 }
 
-.payment-option.selected {
+.opcao-pagamento.selecionado {
     border-color: var(--text-maroon);
     background-color: var(--bg-medium-pink);
     border-width: 2px;
 }
 
-.payment-option i {
+.opcao-pagamento i {
     font-size: 1.4rem;
 }
 
-.icon-cash { color: var(--icon-green); }
-.icon-pix { color: var(--icon-blue); }
-.icon-card { color: var(--icon-blue); }
+.icone-dinheiro { color: var(--icon-green); }
+.icone-pix { color: var(--icon-blue); }
+.icone-cartao { color: var(--icon-blue); }
 
 /* Coluna da Direita */
-.summary-section {
+.secao-resumo {
     background-color: var(--bg-medium-pink);
-    border: 1px solid var(--border-pink);
+    border: 3px solid var(--border-pink);
     border-radius: 8px;
     padding: 25px;
-    height: fit-content; /* Para a caixa não esticar */
+    height: fit-content;
 }
 
-.cart-item {
+.item-carrinho {
     display: flex;
     align-items: center;
     gap: 15px;
     margin-bottom: 20px;
 }
 
-.cart-item img {
+.item-carrinho img {
     width: 60px;
     height: 60px;
     border-radius: 8px;
@@ -234,20 +238,20 @@ main h1::after {
     border: 1px solid var(--border-pink);
 }
 
-.cart-item .item-info {
-    flex-grow: 1; /* Empurra o "1" para a direita */
+.item-carrinho .info-item {
+    flex-grow: 1;
 }
 
-.cart-item .item-info span {
+.item-carrinho .info-item span {
     font-size: 1rem;
 }
 
-.cart-item .item-info strong {
+.item-carrinho .info-item strong {
     font-size: 1.1rem;
     color: var(--text-dark-gray);
 }
 
-.cart-item .item-quantity {
+.item-carrinho .quantidade-item {
     background-color: var(--white);
     border: 1px solid var(--border-pink);
     padding: 2px 8px;
@@ -255,7 +259,7 @@ main h1::after {
     font-weight: bold;
 }
 
-.summary-details {
+.detalhes-resumo {
     display: flex;
     flex-direction: column;
     gap: 12px;
@@ -264,22 +268,22 @@ main h1::after {
     border-bottom: 1px solid var(--border-pink);
 }
 
-.summary-line {
+.linha-resumo {
     display: flex;
     justify-content: space-between;
     font-size: 1rem;
 }
 
-.summary-line.total {
+.linha-resumo.total {
     font-size: 1.2rem;
     margin-top: 10px;
 }
 
-.summary-line strong {
+.linha-resumo strong {
     color: var(--text-maroon);
 }
 
-.delivery-time {
+.tempo-entrega {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -293,11 +297,11 @@ main h1::after {
     margin: 20px 0;
 }
 
-.delivery-time i {
+.tempo-entrega i {
     font-size: 1.5rem;
 }
 
-.btn-add-items, .btn-submit {
+.btn-adicionar-itens, .btn-enviar-pedido {
     width: 100%;
     padding: 18px;
     border: none;
@@ -308,43 +312,51 @@ main h1::after {
     transition: background-color 0.2s ease;
 }
 
-.btn-add-items {
+.btn-adicionar-itens {
     background-color: var(--button-pink);
     color: var(--text-maroon);
     margin-bottom: 10px;
 }
 
-.btn-add-items:hover {
-    background-color: #f07aa8; /* Tom mais escuro */
+.btn-adicionar-itens:hover {
+    background-color: #f07aa8;
 }
 
-.btn-submit {
+.btn-enviar-pedido {
     background-color: var(--button-hot-pink);
     color: var(--white);
 }
 
-.btn-submit:hover {
-    background-color: #d81b60; /* Tom mais escuro */
+.btn-enviar-pedido:hover {
+    background-color: #d81b60;
 }
 
-/* Responsividade para Celular */
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
         gap: 15px;
     }
-
-    .checkout-container {
-        grid-template-columns: 1fr; /* Coluna única */
+    
+    main {
+        padding: 0 10px;
     }
 
-    .summary-section {
-        /* No mobile, o resumo pode vir antes ou depois */
-        /* Para inverter a ordem, mude no HTML ou use flex-direction: column-reverse no container */
+    .container-titulo {
+        margin-top: 20px;
+        padding: 20px 15px 10px;
+    }
+
+    .container-pedido {
+        grid-template-columns: 1fr;
         margin-top: 20px;
     }
 
-    .payment-options {
-        grid-template-columns: 1fr; /* Botões em coluna única */
+    .secao-resumo {
+        margin-top: 20px;
+    }
+
+    .opcoes-pagamento {
+        grid-template-columns: 1fr;
     }
 }
